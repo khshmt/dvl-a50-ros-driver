@@ -8,13 +8,13 @@ import rospy
 # from mpl_toolkits.mplot3d import Axes3D
 from std_msgs.msg import String
 from waterlinked_a50_ros_driver.msg import DVL, DVLBeam
-from ping_sonar.msg import SonarEcho
+#from ping_sonar.msg import SonarEcho
 from scipy.spatial.transform import Rotation as R
 
 
 def main():
     rospy.init_node('dvl_log_read', anonymous=False)
-    bag_file = rospy.get_param('~bag', '')
+    bag_file = sys.argv[1] if len(sys.argv) > 1 else ''
 
     # Create 3d figure
     dr_fig = plt.figure()

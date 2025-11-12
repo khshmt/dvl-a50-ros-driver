@@ -3,7 +3,7 @@
 
     <!-- Params -->
     <param name="use_sim_time" value="true"/>
-    <arg name="file" value="15-06/mhl_straight_line_1.bag"/>
+    <arg name="file" default="log.bag"/>
     <arg name="path" value="$(find waterlinked_a50_ros_driver)/data/rosbags/"/>
     <arg name="full_name" value="$(arg path)$(arg file)"/>
 
