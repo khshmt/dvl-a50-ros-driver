@@ -14,7 +14,12 @@ from scipy.spatial.transform import Rotation as R
 
 def main():
     rospy.init_node('dvl_log_read', anonymous=False)
-    bag_file = sys.argv[1] if len(sys.argv) > 1 else ''
+    bag_file = ""
+    if len(sys.argv) > 1:
+        bag_file = sys.argv[1]  
+    else:
+        print("Please provide a bag file to read")
+        return
 
     # Create 3d figure
     dr_fig = plt.figure()
